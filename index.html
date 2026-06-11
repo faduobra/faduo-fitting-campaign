@@ -21,9 +21,7 @@
             --text-dark: #5B524D;
             --text-light: #8A7E77;
             --white: #FFFFFF;
-            /* 內文使用乾淨現代無襯線字 */
             --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-            /* 大標題使用極具品牌高級感的思源宋體 */
             --font-serif: 'Noto Serif TC', "Microsoft JhengHei", serif;
             --shadow-soft: 0 12px 32px rgba(184, 142, 117, 0.08);
             --shadow-hover: 0 20px 40px rgba(184, 142, 117, 0.15);
@@ -218,7 +216,7 @@
             font-size: 0.95rem;
         }
 
-        /* --- 第五區：「舒.試.穿」回饋禮 --- */
+        /* --- 第五區：試穿回饋禮 --- */
         .reward-outer {
             max-width: 100%;
             background-color: var(--bg-oat);
@@ -392,7 +390,7 @@
             width: 18px;
             height: 18px;
             border: 1px solid var(--color-milk-tea);
-            border-radius: 50%; /* 改為圓形複選框，視覺上更溫柔精緻 */
+            border-radius: 50%;
             margin-right: 12px;
             display: grid;
             place-content: center;
@@ -426,7 +424,7 @@
             margin-top: 45px;
         }
 
-        /* --- 🌸 電子預約小卡燈箱微調 --- */
+        /* --- 🌸 電子預約小卡燈箱 --- */
         .ticket-modal-overlay {
             position: fixed;
             top: 0;
@@ -504,7 +502,7 @@
             font-weight: 500;
             color: var(--text-dark);
             margin-bottom: 28px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         .ticket-info-list {
@@ -552,7 +550,20 @@
             color: var(--text-light);
             margin-top: 16px;
             letter-spacing: 0.5px;
+            line-height: 1.6;
+        }
+        
+        /* ⚠️ 加強版存圖警語 */
+        .ticket-warn-notice {
+            font-size: 0.8rem;
+            color: #C07050; /* 帶有警示感但溫柔的磚紅調 */
+            font-weight: 600;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
             line-height: 1.5;
+            background-color: #FAF2EE;
+            padding: 8px 12px;
+            border-radius: 8px;
         }
 
         .ticket-action-btns {
@@ -611,14 +622,55 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- Footer --- */
+        /* --- 🌸 Footer 與 社群按鈕樣式 --- */
         footer {
             background-color: var(--text-dark);
             color: var(--bg-cream);
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             font-size: 0.85rem;
             letter-spacing: 1.5px;
+        }
+        
+        .footer-brand {
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .social-links-container {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .social-link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            color: var(--bg-cream);
+            transition: var(--transition);
+        }
+
+        .social-link-item:hover {
+            background-color: var(--color-milk-tea);
+            transform: translateY(-3px);
+        }
+
+        .social-link-item svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .footer-copyright {
+            color: var(--text-light);
+            font-size: 0.75rem;
         }
 
         @media (max-width: 768px) {
@@ -645,13 +697,13 @@
     </header>
 
     <section class="intro-section fade-in-section">
-        <h2 class="section-title">法朵「舒.試.穿」計畫 </h2>
+        <h2 class="section-title">法朵「舒.試.穿」計畫</h2>
         <p class="section-subtitle" style="margin-bottom: 0;">妳真的穿對尺寸了嗎？<br>免費尺寸測量 × 專人試穿建議</p>
     </section>
 
     <section class="fade-in-section" style="background-color: rgba(239, 233, 228, 0.3); max-width: 100%; padding-top: 45px; padding-bottom: 75px;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="section-title">活動亮點</h2>
+            <h2 class="section-title">計畫亮點</h2>
             <p class="section-subtitle">客製化的貼心服務，尋找妳的完美比例</p>
             
             <div class="highlights-grid">
@@ -684,14 +736,14 @@
                 <img src="washing-bag.jpg" alt="法朵專屬內衣洗衣袋">
             </div>
             <p class="gift-text-main">法朵專屬內衣洗衣袋</p>
-            <p class="gift-text-sub">完成試穿體驗即可免費獲得</p>
+            <p class="gift-text-sub">完成「舒.試.穿」體驗即可免費獲得</p>
         </div>
     </section>
 
     <div class="reward-outer fade-in-section">
         <section class="reward-section">
             <div class="reward-card">
-                <h3>完成試穿即可獲得</h3>
+                <h3>完成「舒.試.穿」即可獲得</h3>
                 <ul class="reward-list">
                     <li><span class="check-icon">✓</span> 法朵專屬內衣洗衣袋</li>
                     <li><span class="check-icon">✓</span> 專屬回店優惠卡</li>
@@ -844,8 +896,14 @@
                 <div class="barcode-area">
                     <svg id="barcode"></svg>
                 </div>
+                
                 <div class="ticket-notice">
-                    到店請向服務人員出示此畫面<br>完成體驗即可免費兌換「來店體驗禮」
+                    到店請向服務人員出示此畫面<br>
+                    有任何問題歡迎來電詢問：06-2933222
+                </div>
+                
+                <div class="ticket-warn-notice">
+                    ⚠️ 請務必【長按上方小卡儲存】或【直接對螢幕截圖】，以免關閉後找不到預約條碼唷！
                 </div>
 
                 <div class="download-image-view" id="downloadImageView">
@@ -862,11 +920,31 @@
     </div>
 
     <footer>
-        <p>法朵內衣・FADOU｜100%台灣製</p>
+        <div class="footer-brand">法朵內衣・FADOU｜100%台灣製</div>
+        
+        <div class="social-links-container">
+            <a href="https://www.facebook.com/FaDuoBra" target="_blank" class="social-link-item" title="Facebook">
+                <svg viewBox="0 0 24 24">
+                    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/faduo_bra/" target="_blank" class="social-link-item" title="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+            </a>
+            <a href="https://lin.ee/wLeLebl" target="_blank" class="social-link-item" title="LINE">
+                <svg viewBox="0 0 24 24">
+                    <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738s-12 4.369-12 9.738c0 4.814 4.269 8.846 10.036 9.564.391.084.922.258 1.058.592.121.303.079.778.038 1.084l-.171 1.027c-.052.303-.251 1.184 1.081.646 1.333-.537 7.177-4.225 9.799-7.237 2.13-2.467 3.159-4.859 3.159-7.172zm-17.03 2.115h-1.66c-.367 0-.666-.299-.666-.666v-4.146c0-.367.299-.666.666-.666s.666.299.666.666v3.48h.994c.367 0 .666.299.666.666s-.299.666-.666.666zm2.83 0h-.007c-.364 0-.661-.293-.665-.657v-4.152c-.002-.368.296-.668.664-.67.368-.002.668.296.67.664v4.152c.003.366-.292.662-.656.663zm3.766 0h-1.745c-.347 0-.638-.266-.663-.612l-.441-3.32v3.266c0 .367-.299.666-.666.666s-.666-.299-.666-.666v-4.146c0-.342.258-.626.596-.661.359-.037.679.2.731.554l.413 3.107v-3.001c0-.367.299-.666.666-.666s-.666.299-.666.666v4.146c0 .367-.299.666-.666.666zm4.184-1.464c0 .367-.299.666-.666.666h-1.66c-.367 0-.666-.299-.666-.666v-4.146c0-.367.299-.666.666-.666h1.66c.367 0 .666.299.666.666s-.299.666-.666.666h-.994v.741h.994c.367 0 .666.299.666.666s-.299.666-.666.666h-.994v.741h.994c.367 0 .666.299.666.666z"/>
+                </svg>
+            </a>
+        </div>
+        
+        <div class="footer-copyright">© 法朵內衣 FADOU BRA. All Rights Reserved.</div>
     </footer>
 
     <div class="btn-floating-container">
-        <a href="#form" class="btn-capsule">立即預約試穿</a>
+        <a href="#form" class="btn-capsule">立即預約「舒.試.穿」</a>
     </div>
 
     <script>
@@ -921,11 +999,9 @@
                     lineColor: "#5B524D" 
                 });
                 
-                // 確保先隱藏圖片覆蓋層，顯示原本的 HTML 結構以便 html2canvas 渲染
                 document.getElementById('downloadImageView').style.display = 'none';
                 document.getElementById('btnDownloadTicket').style.display = 'block';
                 
-                // 打開燈箱
                 document.getElementById('ticketModal').classList.add('active');
                 
                 document.getElementById('appointmentForm').reset();
@@ -940,7 +1016,7 @@
             });
         });
 
-        /* --- 🌸 憑證小卡下載控制（相容手機 LINE/Safari 環境） --- */
+        /* --- 🌸 憑證小卡下載控制 --- */
         document.getElementById('btnDownloadTicket').addEventListener('click', function() {
             const ticketCard = document.getElementById('ticketCard');
             const downloadBtn = this;
@@ -955,11 +1031,9 @@
             }).then(canvas => {
                 const imgDataUrl = canvas.toDataURL('image/png');
                 
-                // 將產生的圖片塞入隱藏的 img 標籤，並直接整層覆蓋原有的卡片，讓客人可以直接長按儲存
                 document.getElementById('generatedTicketImg').src = imgDataUrl;
                 document.getElementById('downloadImageView').style.display = 'flex';
                 
-                // 隱藏下載按鈕以免重複點擊
                 downloadBtn.style.display = 'none';
             }).catch(err => {
                 console.error("生成圖片失敗:", err);
