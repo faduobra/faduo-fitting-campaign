@@ -15,1012 +15,965 @@
 <style>
 /* --- 基礎變數與重設 --- */
 :root {
---bg-cream: #F8F5F2;
---color-milk-tea: #B88E75;
---bg-oat: #EFE9E4;
---text-dark: #5B524D;
---text-light: #8A7E77;
---white: #FFFFFF;
---font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
---font-serif: 'Noto Serif TC', "Microsoft JhengHei", serif;
---shadow-soft: 0 12px 32px rgba(184, 142, 117, 0.08);
---shadow-hover: 0 20px 40px rgba(184, 142, 117, 0.15);
---transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --bg-cream: #F8F5F2;
+  --color-milk-tea: #B88E75;
+  --bg-oat: #EFE9E4;
+  --text-dark: #5B524D;
+  --text-light: #8A7E77;
+  --white: #FFFFFF;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  --font-serif: 'Noto Serif TC', "Microsoft JhengHei", serif;
+  --shadow-soft: 0 12px 32px rgba(184, 142, 117, 0.08);
+  --shadow-hover: 0 20px 40px rgba(184, 142, 117, 0.15);
+  --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-font-family: var(--font-sans);
-background-color: var(--bg-cream);
-color: var(--text-dark);
-line-height: 1.8;
-letter-spacing: 0.5px;
-overflow-x: hidden;
-padding-bottom: 110px;
+  font-family: var(--font-sans);
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  overflow-x: hidden;
+  padding-bottom: 110px;
 }
 
 /* --- 網頁滑入動畫定義 --- */
 .fade-in-section {
-opacity: 0;
-transform: translateY(30px);
-animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeInUp {
-to {
-opacity: 1;
-transform: translateY(0);
-}
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* --- 通用樣式 --- */
 section {
-padding: 90px 20px;
-max-width: 1200px;
-margin: 0 auto;
-text-align: center;
+  padding: 90px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .section-title {
-font-family: var(--font-serif);
-font-size: 1.6rem;
-font-weight: 500;
-margin-bottom: 14px;
-letter-spacing: 6px;
-color: var(--text-dark);
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: 6px;
+  color: var(--text-dark);
 }
 
 .section-subtitle {
-font-size: 0.95rem; 
-color: var(--text-light);
-margin-bottom: 40px; 
-letter-spacing: 1.5px;
-font-weight: 400; 
+  font-size: 0.95rem; 
+  color: var(--text-light);
+  margin-bottom: 40px; 
+  letter-spacing: 1.5px;
+  font-weight: 400; 
+}
+
+/* --- 統一卡片樣式 (核心視覺落實) --- */
+.card-style { 
+  background-color: var(--white); 
+  padding: 45px 24px; 
+  border-radius: 24px; 
+  box-shadow: var(--shadow-soft); 
+  transition: var(--transition); 
+  text-align: center;
+}
+.card-style:hover { 
+  transform: translateY(-6px); 
+  box-shadow: var(--shadow-hover); 
 }
 
 /* 韓系優雅膠囊按鈕 */
 .btn-capsule {
-display: inline-block;
-background-color: var(--color-milk-tea);
-color: var(--white) !important;
-padding: 14px 36px;
-border-radius: 50px;
-text-decoration: none;
-font-size: 0.95rem;
-font-weight: 500;
-letter-spacing: 2px;
-border: none;
-cursor: pointer;
-box-shadow: 0 6px 20px rgba(184, 142, 117, 0.25);
-transition: var(--transition);
-width: 90%;
-max-width: 340px;
-text-align: center;
+  display: inline-block;
+  background-color: var(--color-milk-tea);
+  color: var(--white) !important;
+  padding: 14px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(184, 142, 117, 0.25);
+  transition: var(--transition);
+  width: 90%;
+  max-width: 340px;
+  text-align: center;
 }
 
 .btn-capsule:hover {
-transform: translateY(-3px);
-box-shadow: 0 10px 25px rgba(184, 142, 117, 0.4);
-opacity: 0.95;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(184, 142, 117, 0.4);
+  opacity: 0.95;
 }
 
 .btn-capsule:disabled {
-background-color: var(--text-light);
-box-shadow: none;
-cursor: not-allowed;
-transform: none;
+  background-color: var(--text-light);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .btn-floating-container {
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
-background: linear-gradient(to top, rgba(248, 245, 242, 0.98) 75%, rgba(248, 245, 242, 0));
-padding: 16px 20px 28px 20px;
-text-align: center;
-z-index: 999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(248, 245, 242, 0.98) 75%, rgba(248, 245, 242, 0));
+  padding: 16px 20px 28px 20px;
+  text-align: center;
+  z-index: 999;
 }
 
 /* --- 第一區：Hero Banner --- */
 .hero-section {
-width: 100%;
-max-width: 100%;
-margin: 0 auto;
-overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .hero-image {
-width: 100%;
-height: auto;
-display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* --- 第二區：活動介紹 --- */
 .intro-section {
-padding-top: 40px; 
-padding-bottom: 30px; 
+  padding-top: 40px; 
+  padding-bottom: 30px; 
 }
 .intro-section .section-title {
-font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 /* --- 第三區：活動亮點 --- */
 .highlights-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-gap: 28px;
-margin-top: 20px;
-}
-.highlight-card {
-background-color: var(--white);
-padding: 45px 24px;
-border-radius: 24px;
-box-shadow: var(--shadow-soft);
-transition: var(--transition);
-}
-.highlight-card:hover {
-transform: translateY(-6px);
-box-shadow: var(--shadow-hover);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
 }
 .highlight-card h3 {
-font-family: var(--font-serif);
-font-size: 1.25rem;
-font-weight: 500;
-color: var(--color-milk-tea);
-margin-bottom: 16px;
-letter-spacing: 1px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-milk-tea);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
 }
 .highlight-card p {
-font-size: 0.9rem;
-color: var(--text-light);
+  font-size: 0.9rem;
+  color: var(--text-light);
 }
 
-/* --- 第四區：來店體驗禮 --- */
-.gift-img-container {
-margin: 0 auto;
-max-width: 460px;
-width: 100%;
-border-radius: 28px;
-overflow: hidden;
-box-shadow: 0 16px 40px rgba(184, 142, 117, 0.12);
-margin-bottom: 28px;
-transition: var(--transition);
-}
-.gift-img-container img {
-width: 100%;
-height: auto;
-display: block;
-transition: var(--transition);
-}
-.gift-img-container:hover img {
-transform: scale(1.02);
-}
-.gift-text-main {
-font-family: var(--font-serif);
-font-size: 1.3rem;
-font-weight: 500;
-margin-bottom: 8px;
-}
-.gift-text-sub {
-color: var(--text-light);
-font-size: 0.95rem;
-}
-
-/* --- 第五區：試穿回饋禮 --- */
+/* --- 第四區：來店體驗禮 / 試穿回饋禮 --- */
 .reward-outer {
-max-width: 100%;
-background-color: var(--bg-oat);
+  max-width: 100%;
+  background-color: var(--bg-oat);
 }
 .reward-section {
-padding: 90px 20px;
-}
-.reward-card {
-background-color: var(--white);
-padding: 50px 32px;
-border-radius: 32px;
-max-width: 540px;
-margin: 0 auto;
-box-shadow: var(--shadow-soft);
-}
-.reward-card h3 {
-font-family: var(--font-serif);
-font-size: 1.25rem;
-font-weight: 500;
-color: var(--text-dark);
-margin-bottom: 28px;
-letter-spacing: 1px;
+  padding: 90px 20px;
 }
 .reward-list {
-list-style: none;
-text-align: left;
-max-width: 280px;
-margin: 0 auto;
+  list-style: none;
+  text-align: left;
+  max-width: 280px;
+  margin: 0 auto;
 }
 .reward-list li {
-font-size: 1rem;
-margin-bottom: 18px;
-display: flex;
-align-items: center;
-color: var(--text-dark);
+  font-size: 1rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  color: var(--text-dark);
 }
-.reward-list li .check-icon {
-color: var(--color-milk-tea);
-margin-right: 14px;
-font-weight: normal;
-}
-.reward-discount {
-margin-top: 32px;
-padding-top: 28px;
-border-top: 1px dashed var(--bg-oat);
-font-family: var(--font-serif);
-font-size: 1.35rem;
-font-weight: 500;
-color: var(--color-milk-tea);
-letter-spacing: 1px;
+.reward-list li .icon-box {
+  color: var(--color-milk-tea);
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
 }
 
 /* --- 第六區：門市資訊 --- */
 .stores-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
 }
 .store-card {
-    background-color: var(--white);
-    padding: 36px 28px;
-    border-radius: 24px;
-    box-shadow: var(--shadow-soft);
-    text-align: center; /* 改成 center 會更整齊 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: var(--transition);
-}
-.store-card:hover {
-transform: translateY(-5px);
-box-shadow: var(--shadow-hover);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 28px;
 }
 .store-name {
-font-family: var(--font-serif);
-font-size: 1.3rem;
-font-weight: 500;
-color: var(--color-milk-tea);
-margin-bottom: 12px;
-letter-spacing: 1px;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-milk-tea);
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 .store-address {
-font-size: 0.9rem;
-color: var(--text-light);
-margin-bottom: 28px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 28px;
 }
 .btn-map {
-    display: inline-block;
-    border: 1px solid var(--color-milk-tea);
-    color: var(--color-milk-tea) !important;
-    background-color: transparent;
-    padding: 10px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: var(--transition);
+  display: block;
+  text-align: center;
+  border: 1px solid var(--color-milk-tea);
+  color: var(--color-milk-tea) !important;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: var(--transition);
 }
 .btn-map:hover {
-background-color: var(--color-milk-tea);
-color: var(--white) !important;
+  background-color: var(--color-milk-tea);
+  color: var(--white) !important;
 }
 
 /* --- 第七區：預約表單 --- */
 .form-section {
-background-color: var(--white);
-border-radius: 40px 40px 0 0;
-box-shadow: 0 -15px 40px rgba(184, 142, 117, 0.04);
-max-width: 700px;
-margin: 60px auto 0 auto;
-padding: 70px 45px;
+  border-radius: 40px 40px 0 0;
+  box-shadow: 0 -15px 40px rgba(184, 142, 117, 0.04);
+  max-width: 700px;
+  margin: 60px auto 0 auto;
+  padding: 70px 45px;
 }
 .booking-form {
-text-align: left;
-margin-top: 40px;
+  text-align: left;
+  margin-top: 40px;
 }
 .form-group {
-margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .form-label {
-display: block;
-font-size: 0.95rem;
-font-weight: 500;
-margin-bottom: 12px;
-color: var(--text-dark);
-letter-spacing: 1px;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  letter-spacing: 1px;
 }
 .form-control {
-width: 100%;
-padding: 14px 18px;
-border: 1px solid var(--bg-oat);
-background-color: var(--bg-cream);
-border-radius: 12px;
-font-size: 0.95rem;
-color: var(--text-dark);
-transition: var(--transition);
-outline: none;
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--bg-oat);
+  background-color: var(--bg-cream);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: var(--transition);
+  outline: none;
 }
 .form-control:focus {
-border-color: var(--color-milk-tea);
-background-color: var(--white);
-box-shadow: 0 0 0 4px rgba(184, 142, 117, 0.08);
+  border-color: var(--color-milk-tea);
+  background-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(184, 142, 117, 0.08);
 }
 
 .checkbox-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 14px;
-margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
 }
 .checkbox-label {
-display: flex;
-align-items: center;
-background-color: var(--bg-cream);
-padding: 14px 16px;
-border-radius: 12px;
-cursor: pointer;
-font-size: 0.9rem;
-color: var(--text-dark);
-transition: var(--transition);
-border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-cream);
+  padding: 14px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  transition: var(--transition);
+  border: 1px solid transparent;
 }
 .checkbox-label:hover {
-background-color: var(--bg-oat);
+  background-color: var(--bg-oat);
 }
 .checkbox-input {
-appearance: none;
--webkit-appearance: none;
-width: 18px;
-height: 18px;
-border: 1px solid var(--color-milk-tea);
-border-radius: 50%;
-margin-right: 12px;
-display: grid;
-place-content: center;
-cursor: pointer;
-background-color: var(--white);
-transition: var(--transition);
-flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-milk-tea);
+  border-radius: 50%;
+  margin-right: 12px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  background-color: var(--white);
+  transition: var(--transition);
+  flex-shrink: 0;
 }
 .checkbox-input::before {
-content: "";
-width: 8px;
-height: 8px;
-border-radius: 50%;
-transform: scale(0);
-transition: 120ms transform ease-in-out;
-background-color: var(--white);
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--white);
 }
 .checkbox-input:checked {
-background-color: var(--color-milk-tea);
+  background-color: var(--color-milk-tea);
 }
 .checkbox-input:checked::before {
-transform: scale(1);
+  transform: scale(1);
 }
 .checkbox-label:has(.checkbox-input:checked) {
-background-color: #FFFDFB;
-border-color: var(--color-milk-tea);
+  background-color: #FFFDFB;
+  border-color: var(--color-milk-tea);
 }
 
 .form-submit-container {
-text-align: center;
-margin-top: 45px;
+  text-align: center;
+  margin-top: 45px;
 }
 
 /* --- 🌸 電子預約小卡燈箱 --- */
 .ticket-modal-overlay {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(91, 82, 77, 0.5);
-backdrop-filter: blur(6px);
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: 10000;
-opacity: 0;
-pointer-events: none;
-transition: opacity 0.5s ease;
-padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(91, 82, 77, 0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  padding: 20px;
 }
 
 .ticket-modal-overlay.active {
-opacity: 1;
-pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .ticket-container {
-background-color: var(--bg-cream);
-width: 100%;
-max-width: 360px;
-border-radius: 28px;
-padding: 24px;
-box-shadow: 0 30px 60px rgba(91, 82, 77, 0.2);
-text-align: center;
-transform: translateY(30px);
-transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--bg-cream);
+  width: 100%;
+  max-width: 360px;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 30px 60px rgba(91, 82, 77, 0.2);
+  text-align: center;
+  transform: translateY(30px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ticket-modal-overlay.active .ticket-container {
-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .ticket-card-capture {
-background-color: var(--white);
-border-radius: 20px;
-padding: 36px 24px;
-box-shadow: var(--shadow-soft);
-border: 1px solid var(--bg-oat);
-text-align: center;
-position: relative;
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 36px 24px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--bg-oat);
+  text-align: center;
+  position: relative;
 }
 
 .ticket-card-capture::before {
-content: '';
-position: absolute;
-top: 14px;
-left: 50%;
-transform: translateX(-50%);
-width: 8px;
-height: 8px;
-border-radius: 50%;
-background-color: var(--bg-cream);
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--bg-cream);
 }
 
 .ticket-logo {
-font-family: var(--font-sans);
-font-size: 1.1rem;
-font-weight: 600;
-letter-spacing: 5px;
-color: var(--color-milk-tea);
-margin-bottom: 6px;
-margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--color-milk-tea);
+  margin-bottom: 6px;
+  margin-top: 4px;
 }
 
 .ticket-title {
-font-family: var(--font-serif);
-font-size: 1.25rem;
-font-weight: 500;
-color: var(--text-dark);
-margin-bottom: 28px;
-letter-spacing: 2px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  letter-spacing: 2px;
 }
 
 .ticket-info-list {
-text-align: left;
-margin-bottom: 24px;
-border-top: 1px dashed var(--bg-oat);
-border-bottom: 1px dashed var(--bg-oat);
-padding: 24px 6px;
+  text-align: left;
+  margin-bottom: 24px;
+  border-top: 1px dashed var(--bg-oat);
+  border-bottom: 1px dashed var(--bg-oat);
+  padding: 24px 6px;
 }
 
 .ticket-info-item {
-font-size: 0.9rem;
-margin-bottom: 14px;
-color: var(--text-dark);
-display: flex;
-letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  color: var(--text-dark);
+  display: flex;
+  letter-spacing: 0.5px;
 }
 .ticket-info-item:last-child {
-margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .ticket-info-label {
-color: var(--text-light);
-width: 85px;
-flex-shrink: 0;
+  color: var(--text-light);
+  width: 85px;
+  flex-shrink: 0;
 }
 
 .ticket-info-value {
-font-weight: 500;
+  font-weight: 500;
 }
 
 .barcode-area {
-margin: 0 auto;
-text-align: center;
-padding: 4px 0;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4px 0;
 }
 
 #barcode {
-max-width: 100%;
-height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .ticket-notice {
-font-size: 0.75rem;
-color: var(--text-light);
-margin-top: 16px;
-letter-spacing: 0.5px;
-line-height: 1.6;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
 }
 
-/* ⚠️ 加強版存圖警語 */
 .ticket-warn-notice {
-font-size: 0.8rem;
-color: #C07050; /* 帶有警示感但溫柔的磚紅調 */
-font-weight: 600;
-margin-top: 12px;
-letter-spacing: 0.5px;
-line-height: 1.5;
-background-color: #FAF2EE;
-padding: 8px 12px;
-border-radius: 8px;
+  font-size: 0.8rem;
+  color: #C07050; 
+  font-weight: 600;
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  background-color: #FAF2EE;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .ticket-action-btns {
-margin-top: 24px;
-display: flex;
-flex-direction: column;
-gap: 12px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .btn-ticket-download {
-width: 100%;
-padding: 12px;
-font-size: 0.95rem;
+  width: 100%;
+  padding: 12px;
+  font-size: 0.95rem;
 }
 
 .btn-ticket-close {
-background-color: transparent;
-border: none;
-color: var(--text-light);
-font-size: 0.85rem;
-cursor: pointer;
-text-decoration: underline;
-padding: 4px;
-letter-spacing: 1px;
+  background-color: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 4px;
+  letter-spacing: 1px;
 }
 .btn-ticket-close:hover {
-color: var(--text-dark);
+  color: var(--text-dark);
 }
 
 /* 長按下載覆蓋圖片層 */
 .download-image-view {
-display: none;
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: var(--white);
-border-radius: 20px;
-z-index: 10;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 20px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  z-index: 10;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 .download-image-view img {
-max-width: 100%;
-box-shadow: var(--shadow-soft);
-border-radius: 12px;
+  max-width: 100%;
+  box-shadow: var(--shadow-soft);
+  border-radius: 12px;
 }
 .download-tip-text {
-font-size: 0.85rem;
-color: var(--color-milk-tea);
-margin-top: 16px;
-font-weight: 500;
-letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  color: var(--color-milk-tea);
+  margin-top: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 /* --- 🌸 Footer 與 社群按鈕樣式 --- */
 footer {
-background-color: var(--text-dark);
-color: var(--bg-cream);
-text-align: center;
-padding: 50px 20px;
-font-size: 0.85rem;
-letter-spacing: 1.5px;
+  background-color: var(--text-dark);
+  color: var(--bg-cream);
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
 }
 
 .footer-brand {
-font-weight: 500;
-margin-bottom: 20px;
-font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
 }
 
 .social-links-container {
-display: flex;
-justify-content: center;
-gap: 24px;
-margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .social-link-item {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 44px;
-height: 44px;
-background-color: rgba(255, 255, 255, 0.06);
-border-radius: 50%;
-color: var(--bg-cream);
-transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  color: var(--bg-cream);
+  transition: var(--transition);
 }
 
 .social-link-item:hover {
-background-color: var(--color-milk-tea);
-transform: translateY(-3px);
+  background-color: var(--color-milk-tea);
+  transform: translateY(-3px);
 }
 
 .social-link-item svg {
-width: 20px;
-height: 20px;
-fill: currentColor;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .footer-copyright {
-color: var(--text-light);
-font-size: 0.75rem;
+  color: var(--text-light);
+  font-size: 0.75rem;
 }
 
 @media (max-width: 768px) {
-section {
-padding: 60px 20px; 
-}
-.section-title {
-font-size: 1.4rem;
-}
-.form-section {
-padding: 45px 24px;
-margin-top: 40px;
-}
-.checkbox-grid {
-grid-template-columns: 1fr;
-}
+  section {
+    padding: 60px 20px; 
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .form-section {
+    padding: 45px 24px;
+    margin-top: 40px;
+  }
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 <body>
 
 <header class="hero-section">
-<img src="hero.jpg" alt="法朵內衣 FADOU 主視覺" class="hero-image">
+  <img src="hero.jpg" alt="法朵內衣 FADOU 主視覺" class="hero-image">
 </header>
 
 <section class="intro-section fade-in-section">
-<h2 class="section-title">法朵「舒.試.穿」計畫</h2>
-<p class="section-subtitle" style="margin-bottom: 0;">妳真的穿對尺寸了嗎？<br>免費尺寸測量 × 專人試穿建議</p>
+  <h2 class="section-title">法朵「舒.試.穿」計畫</h2>
+  <p class="section-subtitle" style="margin-bottom: 0;">妳真的穿對尺寸了嗎？<br>免費尺寸測量 × 專人試穿建議</p>
 </section>
 
 <section class="fade-in-section" style="background-color: rgba(239, 233, 228, 0.3); max-width: 100%; padding-top: 45px; padding-bottom: 75px;">
-<div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-<h2 class="section-title">計畫亮點</h2>
-<p class="section-subtitle">客製化的貼心服務，尋找妳的完美比例</p>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <h2 class="section-title">計畫亮點</h2>
+    <p class="section-subtitle">客製化的貼心服務，尋找妳的完美比例</p>
 
-<div class="highlights-grid">
-<div class="highlight-card">
-<h3>尺寸測量</h3>
-<p>了解目前穿著尺寸與適合尺寸</p>
-</div>
-<div class="highlight-card">
-<h3>試穿體驗</h3>
-<p>依需求推薦適合版型</p>
-</div>
-<div class="highlight-card">
-<h3>專人建議</h3>
-<p>改善空杯、勒痕、肩帶滑落問題</p>
-</div>
-<div class="highlight-card">
-<h3>來店好禮</h3>
-<p>完成試穿贈送洗衣袋</p>
-</div>
-</div>
-</div>
-</section>
-<div class="reward-outer fade-in-section" style="background-color: var(--bg-oat);">
-    <section class="reward-section">
-        <div class="card-style" style="max-width: 500px; margin: 0 auto;">
-            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-dark); margin-bottom: 30px; text-align: center;">試穿回饋禮</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li style="display: flex; align-items: center; justify-content: center;">
-                    <div class="icon-box" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #F8F5F2; border: 1px solid #EFE9E4; border-radius: 16px; color: var(--color-milk-tea);">
-                        <svg viewBox="0 0 24 24" width="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    </div>
-                    <span>法朵專屬內衣洗衣袋</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-</div>
-<section class="fade-in-section">
-    <h2 class="section-title">法朵門市資訊</h2>
-    <p class="section-subtitle">法朵門市皆位於台南</p>
-
-    <div class="stores-grid">
-        <div class="card-style store-card">
-            <div class="store-name">西門店</div>
-            <div class="store-address">台南市中西區西門路二段159號</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%95%E6%9C%B5%E5%85%A7%E8%A1%A3%20%E8%A5%BF%E9%96%80%E5%BA%97%20%E5%8F%B0%E5%8D%97" target="_blank" class="btn-map">查看地圖</a>
-        </div>
-        
-        <div class="card-style store-card">
-            <div class="store-name">崇德店</div>
-            <div class="store-address">台南市東區崇德路579號</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%95%E6%9C%B5%E5%85%A7%E8%A1%A3%20%E5%B4%87%E5%BE%B3%E5%BA%97%20%E5%8F%B0%E5%8D%97" target="_blank" class="btn-map">查看地圖</a>
-        </div>
-
-        <div class="card-style store-card">
-            <div class="store-name">安平店</div>
-            <div class="store-address">台南市安平區平通路421號</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%95%E6%9C%B5%E5%85%A7%E8%A1%A3%20%E5%AE%89%E5%B9%B3%E5%BA%97%20%E5%8F%B0%E5%8D%97" target="_blank" class="btn-map">查看地圖</a>
-        </div>
-
-        <div class="card-style store-card">
-            <div class="store-name">青年店</div>
-            <div class="store-address">台南市東區青年路277號</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%95%E6%9C%B5%E5%85%A7%E8%A1%A3%20%E9%9D%92%E5%B9%B4%E5%BA%97%20%E5%8F%B0%E5%8D%97" target="_blank" class="btn-map">查看地圖</a>
-        </div>
-
-        <div class="card-style store-card">
-            <div class="store-name">善化店</div>
-            <div class="store-address">台南市善化區中山路125號</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=%E6%B3%95%E6%9C%B5%E5%85%A7%E8%A1%A3%20%E5%96%84%E5%8C%96%E5%BA%97%20%E5%8F%B0%E5%8D%97" target="_blank" class="btn-map">查看地圖</a>
-        </div>
+    <div class="highlights-grid">
+      <div class="card-style highlight-card">
+        <h3>尺寸測量</h3>
+        <p>了解目前穿著尺寸與適合尺寸</p>
+      </div>
+      <div class="card-style highlight-card">
+        <h3>試穿體驗</h3>
+        <p>依需求推薦適合版型</p>
+      </div>
+      <div class="card-style highlight-card">
+        <h3>專人建議</h3>
+        <p>改善空杯、勒痕、肩帶滑落問題</p>
+      </div>
+      <div class="card-style highlight-card">
+        <h3>來店好禮</h3>
+        <p>完成試穿贈送洗衣袋</p>
+      </div>
     </div>
+  </div>
 </section>
 
-
-<form class="booking-form" id="appointmentForm">
-<div class="form-group">
-<label class="form-label" for="name">姓名</label>
-<input type="text" id="name" class="form-control" placeholder="請輸入您的姓名" required>
+<div class="reward-outer fade-in-section" style="background-color: var(--bg-oat);">
+  <section class="reward-section">
+    <div class="card-style" style="max-width: 500px; margin: 0 auto;">
+      <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--text-dark); margin-bottom: 30px; text-align: center;">試穿回饋禮</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="display: flex; align-items: center; justify-content: center; margin-bottom: 5px;">
+          <div class="icon-box" style="margin-bottom: 0; margin-right: 14px; color: var(--color-milk-tea); display: flex; align-items: center;">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+          </div>
+          <span style="font-size: 1.05rem; font-weight: 500;">法朵專屬內衣洗衣袋</span>
+        </li>
+      </ul>
+    </div>
+  </section>
 </div>
 
-<div class="form-group">
-<label class="form-label" for="phone">手機號碼</label>
-<input type="tel" id="phone" class="form-control" placeholder="請輸入您的手機號碼" inputmode="numeric" pattern="[0-9]*" required>
-</div>
+<section class="fade-in-section">
+  <h2 class="section-title">法朵門市資訊</h2>
+  <p class="section-subtitle">法朵門市皆位於台南</p>
 
-<div class="form-group">
-<label class="form-label" for="store">選擇門市</label>
-<select id="store" class="form-control" style="cursor: pointer;" required>
-<option value="" disabled selected>請選擇欲前往的門市</option>
-<option value="西門店">西門店</option>
-<option value="崇德店">崇德店</option>
-<option value="安平店">安平店</option>
-<option value="青年店">青年店</option>
-<option value="善化店">善化店</option>
-</select>
-</div>
+  <div class="stores-grid">
+    <div class="card-style store-card">
+      <div>
+        <div class="store-name">西門店</div>
+        <div class="store-address">台南市中西區西門路二段159號</div>
+      </div>
+      <a href="https://maps.google.com/?q=台南市中西區西門路二段159號" target="_blank" class="btn-map">查看地圖</a>
+    </div>
+    
+    <div class="card-style store-card">
+      <div>
+        <div class="store-name">崇德店</div>
+        <div class="store-address">台南市東區崇德路579號</div>
+      </div>
+      <a href="https://maps.google.com/?q=台南市東區崇德路579號" target="_blank" class="btn-map">查看地圖</a>
+    </div>
 
-<div class="form-group">
-<label class="form-label" for="date">預約日期</label>
-<input type="date" id="date" class="form-control" required>
-</div>
+    <div class="card-style store-card">
+      <div>
+        <div class="store-name">安平店</div>
+        <div class="store-address">台南市安平區平通路421號</div>
+      </div>
+      <a href="https://maps.google.com/?q=台南市安平區平通路421號" target="_blank" class="btn-map">查看地圖</a>
+    </div>
 
-<div class="form-group">
-<label class="form-label">穿著困擾（可複選）</label>
-<div class="checkbox-grid">
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="肩帶容易滑落"> 肩帶容易滑落
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="罩杯容易空杯"> 罩杯容易空杯
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="胸部有被壓扁的感覺"> 胸部有被壓扁的感覺
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="下圍容易勒痕"> 下圍容易勒痕
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="想改善副乳問題"> 想改善副乳問題
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="夏天穿內衣容易悶熱"> 夏天穿內衣容易悶熱
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="鋼圈容易不舒服"> 鋼圈容易不舒服
-</label>
-<label class="checkbox-label">
-<input type="checkbox" class="checkbox-input" value="不確定目前尺寸是否正確"> 不確定目前尺寸是否正確
-</label>
-</div>
-</div>
+    <div class="card-style store-card">
+      <div>
+        <div class="store-name">青年店</div>
+        <div class="store-address">台南市東區青年路277號</div>
+      </div>
+      <a href="https://maps.google.com/?q=台南市東區青年路277號" target="_blank" class="btn-map">查看地圖</a>
+    </div>
 
-<div class="form-submit-container">
-<button type="submit" id="submitBtn" class="btn-capsule btn-submit">送出預約</button>
-</div>
-</form>
+    <div class="card-style store-card">
+      <div>
+        <div class="store-name">善化店</div>
+        <div class="store-address">台南市善化區中山路125號</div>
+      </div>
+      <a href="https://maps.google.com/?q=台南市善化區中山路125號" target="_blank" class="btn-map">查看地圖</a>
+    </div>
+  </div>
 </section>
+
+<div class="fade-in-section" style="background-color: var(--bg-oat); max-width: 100%; overflow: hidden;">
+  <section id="form" class="card-style form-section">
+    <h2 class="section-title" style="font-size: 1.6rem; letter-spacing: 3px;">立即預約「舒.試.穿」體驗</h2>
+    <p class="section-subtitle" style="margin-bottom: 0;">完成體驗即可獲得法朵專屬內衣洗衣袋</p>
+
+    <form class="booking-form" id="appointmentForm">
+      <div class="form-group">
+        <label class="form-label" for="name">姓名</label>
+        <input type="text" id="name" class="form-control" placeholder="請輸入您的姓名" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="phone">手機號碼</label>
+        <input type="tel" id="phone" class="form-control" placeholder="請輸入您的手機號碼" inputmode="numeric" pattern="[0-9]*" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="store">選擇門市</label>
+        <select id="store" class="form-control" style="cursor: pointer;" required>
+          <option value="" disabled selected>請選擇欲前往的門市</option>
+          <option value="西門店">西門店</option>
+          <option value="崇德店">崇德店</option>
+          <option value="安平店">安平店</option>
+          <option value="青年店">青年店</option>
+          <option value="善化店">善化店</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="date">預約日期</label>
+        <input type="date" id="date" class="form-control" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">穿著困擾（可複選）</label>
+        <div class="checkbox-grid">
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="肩帶容易滑落"> 肩帶容易滑落
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="罩杯容易空杯"> 罩杯容易空杯
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="胸部有被壓扁的感覺"> 胸部有被壓扁的感覺
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="下圍容易勒痕"> 下圍容易勒痕
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="想改善副乳問題"> 想改善副乳問題
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="夏天穿內衣容易悶熱"> 夏天穿內衣容易悶熱
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="鋼圈容易不舒服"> 鋼圈容易不舒服
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" class="checkbox-input" value="不確定目前尺寸是否正確"> 不確定目前尺寸是否正確
+          </label>
+        </div>
+      </div>
+
+      <div class="form-submit-container">
+        <button type="submit" id="submitBtn" class="btn-capsule btn-submit">送出預約</button>
+      </div>
+    </form>
+  </section>
 </div>
 
 <div class="ticket-modal-overlay" id="ticketModal">
-<div class="ticket-container">
-<div class="ticket-card-capture" id="ticketCard">
-<div class="ticket-logo">FADOU</div>
-<div class="ticket-title">「舒.試.穿」預約憑證</div>
+  <div class="ticket-container">
+    <div class="ticket-card-capture" id="ticketCard">
+      <div class="ticket-logo">FADOU</div>
+      <div class="ticket-title">「舒.試.穿」預約憑證</div>
 
-<div class="ticket-info-list">
-<div class="ticket-info-item">
-<div class="ticket-info-label">預約姓名</div>
-<div class="ticket-info-value" id="lblTicketName">---</div>
-</div>
-<div class="ticket-info-item">
-<div class="ticket-info-label">手機號碼</div>
-<div class="ticket-info-value" id="lblTicketPhone">---</div>
-</div>
-<div class="ticket-info-item">
-<div class="ticket-info-label">預約門市</div>
-<div class="ticket-info-value" id="lblTicketStore">---</div>
-</div>
-<div class="ticket-info-item">
-<div class="ticket-info-label">預約日期</div>
-<div class="ticket-info-value" id="lblTicketDate">---</div>
-</div>
-</div>
+      <div class="ticket-info-list">
+        <div class="ticket-info-item">
+          <div class="ticket-info-label">預約姓名</div>
+          <div class="ticket-info-value" id="lblTicketName">---</div>
+        </div>
+        <div class="ticket-info-item">
+          <div class="ticket-info-label">手機號碼</div>
+          <div class="ticket-info-value" id="lblTicketPhone">---</div>
+        </div>
+        <div class="ticket-info-item">
+          <div class="ticket-info-label">預約門市</div>
+          <div class="ticket-info-value" id="lblTicketStore">---</div>
+        </div>
+        <div class="ticket-info-item">
+          <div class="ticket-info-label">預約日期</div>
+          <div class="ticket-info-value" id="lblTicketDate">---</div>
+        </div>
+      </div>
 
-<div class="barcode-area">
-<svg id="barcode"></svg>
-</div>
+      <div class="barcode-area">
+        <svg id="barcode"></svg>
+      </div>
 
-<div class="ticket-notice">
-到店請向服務人員出示此畫面<br>
-有任何問題歡迎來電詢問：06-2933222
-</div>
+      <div class="ticket-notice">
+        到店請向服務人員出示此畫面<br>
+        有任何問題歡迎來電詢問：06-2933222
+      </div>
 
-<div class="ticket-warn-notice">
-⚠️ 請務必【長按上方小卡儲存】或【直接對螢幕截圖】，以免關閉後找不到預約條碼唷！
-</div>
+      <div class="ticket-warn-notice">
+        ⚠️ 請務必【長按上方小卡儲存】或【直接對螢幕截圖】，以免關閉後找不到預約條碼唷！
+      </div>
 
-<div class="download-image-view" id="downloadImageView">
-<img id="generatedTicketImg" src="" alt="法朵預約小卡">
-<p class="download-tip-text">✨ 請長按上方圖片儲存至相簿 ✨</p>
-</div>
-</div>
+      <div class="download-image-view" id="downloadImageView">
+        <img id="generatedTicketImg" src="" alt="法朵預約小卡">
+        <p class="download-tip-text">✨ 請長按上方圖片儲存至相簿 ✨</p>
+      </div>
+    </div>
 
-<div class="ticket-action-btns">
-<button type="button" class="btn-capsule btn-ticket-download" id="btnDownloadTicket">下載預約小卡</button>
-<button type="button" class="btn-ticket-close" id="btnCloseTicket">關閉視窗</button>
-</div>
-</div>
+    <div class="ticket-action-btns">
+      <button type="button" class="btn-capsule btn-ticket-download" id="btnDownloadTicket">下載預約小卡</button>
+      <button type="button" class="btn-ticket-close" id="btnCloseTicket">關閉視窗</button>
+    </div>
+  </div>
 </div>
 
 <footer>
-<div class="footer-brand">法朵內衣・FADOU｜100%台灣製</div>
+  <div class="footer-brand">法朵內衣・FADOU｜100%台灣製</div>
 
-<div class="social-links-container">
-<a href="https://www.facebook.com/FaDuoBra" target="_blank" class="social-link-item" title="Facebook">
-<svg viewBox="0 0 24 24">
-<path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
-</svg>
-</a>
-<a href="https://www.instagram.com/faduo_bra/" target="_blank" class="social-link-item" title="Instagram">
-<svg viewBox="0 0 24 24">
-<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-</svg>
-</a>
-<a href="https://lin.ee/wLeLebl" target="_blank" class="social-link-item" title="LINE">
-<svg viewBox="0 0 24 24">
-<path d="M24 10.304c0-5.369-5.383-9.738-12-9.738s-12 4.369-12 9.738c0 4.814 4.269 8.846 10.036 9.564.391.084.922.258 1.058.592.121.303.079.778.038 1.084l-.171 1.027c-.052.303-.251 1.184 1.081.646 1.333-.537 7.177-4.225 9.799-7.237 2.13-2.467 3.159-4.859 3.159-7.172zm-17.03 2.115h-1.66c-.367 0-.666-.299-.666-.666v-4.146c0-.367.299-.666.666-.666s.666.299.666.666v3.48h.994c.367 0 .666.299.666.666s-.299.666-.666.666zm2.83 0h-.007c-.364 0-.661-.293-.665-.657v-4.152c-.002-.368.296-.668.664-.67.368-.002.668.296.67.664v4.152c.003.366-.292.662-.656.663zm3.766 0h-1.745c-.347 0-.638-.266-.663-.612l-.441-3.32v3.266c0 .367-.299.666-.666.666s-.666-.299-.666-.666v-4.146c0-.342.258-.626.596-.661.359-.037.679.2.731.554l.413 3.107v-3.001c0-.367.299-.666.666-.666s-.666.299-.666.666v4.146c0 .367-.299.666-.666.666zm4.184-1.464c0 .367-.299.666-.666.666h-1.66c-.367 0-.666-.299-.666-.666v-4.146c0-.367.299-.666.666-.666h1.66c.367 0 .666.299.666.666s-.299.666-.666.666h-.994v.741h.994c.367 0 .666.299.666.666s-.299.666-.666.666h-.994v.741h.994c.367 0 .666.299.666.666z"/>
-</svg>
-</a>
-</div>
+  <div class="social-links-container">
+    <a href="https://www.facebook.com/FaDuoBra" target="_blank" class="social-link-item" title="Facebook">
+      <svg viewBox="0 0 24 24">
+        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/faduo_bra/" target="_blank" class="social-link-item" title="Instagram">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+    </a>
+    <a href="https://lin.ee/wLeLebl" target="_blank" class="social-link-item" title="LINE">
+      <svg viewBox="0 0 24 24">
+        <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738s-12 4.369-12 9.738c0 4.814 4.269 8.846 10.036 9.564.391.084.922.258 1.058.592.121.303.079.778.038 1.084l-.171 1.027c-.052.303-.251 1.184 1.081.646 1.333-.537 7.177-4.225 9.799-7.237 2.13-2.467 3.159-4.859 3.159-7.172zm-17.03 2.115h-1.66c-.367 0-.666-.299-.666-.666v-4.146c0-.367.299-.666.666-.666s.666.299.666.666v3.48h.994c.367 0 .666.299.666.666s-.299.666-.666.666zm2.83 0h-.007c-.364 0-.661-.293-.665-.657v-4.152c-.002-.368.296-.668.664-.67.368-.002.668.296.67.664v4.152c.003.366-.292.662-.656.663zm3.766 0h-1.745c-.347 0-.638-.266-.663-.612l-.441-3.32v3.266c0 .367-.299.666-.666.666s-.666-.299-.666-.666v-4.146c0-.342.258-.626.596-.661.359-.037.679.2.731.554l.413 3.107v-3.001c0-.367.299-.666.666-.666s-.666.299-.666.666v4.146c0 .367-.299.666-.666.666zm4.184-1.464c0 .367-.299.666-.666.666h-1.66c-.367 0-.666-.299-.666-.666v-4.146c0-.367.299-.666.666-.666h1.66c.367 0 .666.299.666.666s-.299.666-.666.666h-.994v.741h.994c.367 0 .666.299.666.666s-.299.666-.666.666h-.994v.741h.994c.367 0 .666.299.666.666z"/>
+      </svg>
+    </a>
+  </div>
 
-<div class="footer-copyright">© 法朵內衣 FADOU BRA. All Rights Reserved.</div>
+  <div class="footer-copyright">© 法朵內衣 FADOU BRA. All Rights Reserved.</div>
 </footer>
 
 <div class="btn-floating-container">
-<a href="#form" class="btn-capsule">立即預約「舒.試.穿」</a>
+  <a href="#form" class="btn-capsule">立即預約「舒.試.穿」</a>
 </div>
 
 <script>
 const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxXXixKoOcq2_GbPrQs6Hba5p2iagMOBz-cy65mpQXmB-7Q_U-FOzA_rk8E8_zmZ0Ri/exec";
 
 document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-e.preventDefault();
+  e.preventDefault();
 
-const submitBtn = document.getElementById('submitBtn');
-submitBtn.disabled = true;
-submitBtn.innerText = "預約傳送中...";
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.innerText = "預約傳送中...";
 
-const name = document.getElementById('name').value;
-const phone = document.getElementById('phone').value;
-const store = document.getElementById('store').value;
-const date = document.getElementById('date').value;
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const store = document.getElementById('store').value;
+  const date = document.getElementById('date').value;
 
-const troubles = [];
-const checkedBoxes = document.querySelectorAll('.checkbox-input:checked');
-checkedBoxes.forEach(function(checkbox) {
-troubles.push(checkbox.value);
-});
+  const troubles = [];
+  const checkedBoxes = document.querySelectorAll('.checkbox-input:checked');
+  checkedBoxes.forEach(function(checkbox) {
+    troubles.push(checkbox.value);
+  });
 
-const formData = {
-name: name,
-phone: phone,
-store: store,
-date: date,
-troubles: troubles
-};
+  const formData = {
+    name: name,
+    phone: phone,
+    store: store,
+    date: date,
+    troubles: troubles
+  };
 
-fetch(WEB_APP_URL, {
-method: "POST",
-mode: "no-cors",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify(formData)
-})
-.then(response => {
-document.getElementById('lblTicketName').innerText = name;
-document.getElementById('lblTicketPhone').innerText = phone;
-document.getElementById('lblTicketStore').innerText = store;
-document.getElementById('lblTicketDate').innerText = date;
+  fetch(WEB_APP_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    document.getElementById('lblTicketName').innerText = name;
+    document.getElementById('lblTicketPhone').innerText = phone;
+    document.getElementById('lblTicketStore').innerText = store;
+    document.getElementById('lblTicketDate').innerText = date;
 
-// 統一使用 Code 128 條碼，內容為指定序號 "faduofitting"
-JsBarcode("#barcode", "faduofitting", {
-format: "CODE128",
-width: 2,
-height: 50,
-displayValue: true, 
-lineColor: "#5B524D" 
-});
+    JsBarcode("#barcode", "faduofitting", {
+      format: "CODE128",
+      width: 2,
+      height: 50,
+      displayValue: true, 
+      lineColor: "#5B524D" 
+    });
 
-document.getElementById('downloadImageView').style.display = 'none';
-document.getElementById('btnDownloadTicket').style.display = 'block';
+    document.getElementById('downloadImageView').style.display = 'none';
+    document.getElementById('btnDownloadTicket').style.display = 'block';
 
-document.getElementById('ticketModal').classList.add('active');
+    document.getElementById('ticketModal').classList.add('active');
 
-document.getElementById('appointmentForm').reset();
-submitBtn.disabled = false;
-submitBtn.innerText = "送出預約";
-})
-.catch(error => {
-console.error("錯誤:", error);
-alert("抱歉，系統目前忙碌中，請稍後再試，或直接聯絡門市。");
-submitBtn.disabled = false;
-submitBtn.innerText = "送出預約";
-});
+    document.getElementById('appointmentForm').reset();
+    submitBtn.disabled = false;
+    submitBtn.innerText = "送出預約";
+  })
+  .catch(error => {
+    console.error("錯誤:", error);
+    alert("抱歉，系統目前忙碌中，請稍後再試，或直接聯絡門市。");
+    submitBtn.disabled = false;
+    submitBtn.innerText = "送出預約";
+  });
 });
 
 /* --- 🌸 憑證小卡下載控制 --- */
 document.getElementById('btnDownloadTicket').addEventListener('click', function() {
-const ticketCard = document.getElementById('ticketCard');
-const downloadBtn = this;
+  const ticketCard = document.getElementById('ticketCard');
+  const downloadBtn = this;
 
-downloadBtn.innerText = "產出小卡圖片中...";
-downloadBtn.disabled = true;
+  downloadBtn.innerText = "產出小卡圖片中...";
+  downloadBtn.disabled = true;
 
-html2canvas(ticketCard, {
-scale: 3, 
-backgroundColor: "#FFFFFF",
-useCORS: true
-}).then(canvas => {
-const imgDataUrl = canvas.toDataURL('image/png');
+  html2canvas(ticketCard, {
+    scale: 3, 
+    backgroundColor: "#FFFFFF",
+    useCORS: true
+  }).then(canvas => {
+    const imgDataUrl = canvas.toDataURL('image/png');
 
-document.getElementById('generatedTicketImg').src = imgDataUrl;
-document.getElementById('downloadImageView').style.display = 'flex';
+    document.getElementById('generatedTicketImg').src = imgDataUrl;
+    document.getElementById('downloadImageView').style.display = 'flex';
 
-downloadBtn.style.display = 'none';
-}).catch(err => {
-console.error("生成圖片失敗:", err);
-alert("圖片產出失敗，您可以直接對螢幕進行截圖保存唷！");
-downloadBtn.innerText = "下載預約小卡";
-downloadBtn.disabled = false;
-});
+    downloadBtn.style.display = 'none';
+  }).catch(err => {
+    console.error("生成圖片失敗:", err);
+    alert("圖片產出失敗，您可以直接對螢幕進行截圖保存唷！");
+    downloadBtn.innerText = "下載預約小卡";
+    downloadBtn.disabled = false;
+  });
 });
 
 // 關閉小卡視窗
 document.getElementById('btnCloseTicket').addEventListener('click', function() {
-document.getElementById('ticketModal').classList.remove('active');
+  document.getElementById('ticketModal').classList.remove('active');
 });
 </script>
 </body>
