@@ -727,30 +727,41 @@
         </div>
     </section>
 
-       <div class="reward-outer fade-in-section" style="background-color: var(--bg-oat); max-width: 100%;">
+        <div class="reward-outer fade-in-section" style="background-color: var(--bg-oat); max-width: 100%;">
         <section class="reward-section" style="padding: 90px 20px;">
-            <div class="reward-card" style="background-color: var(--white); padding: 50px 32px; border-radius: 32px; max-width: 540px; margin: 0 auto; box-shadow: var(--shadow-soft);">
+            <div class="reward-card" style="
+                background-color: var(--white); 
+                padding: 50px 40px; 
+                border-radius: 40px; 
+                max-width: 500px; 
+                margin: 0 auto; 
+                box-shadow: 0 15px 40px rgba(184, 142, 117, 0.15); 
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                border: 1px solid rgba(184, 142, 117, 0.1);"
+                onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 25px 50px rgba(184, 142, 117, 0.25)';"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 40px rgba(184, 142, 117, 0.15)';"
+            >
                 
-                <h3 style="font-family: var(--font-serif); font-size: 1.35rem; font-weight: 500; color: var(--text-dark); margin-bottom: 32px; letter-spacing: 1.5px; text-align: center;">完成「舒.試.穿」即可獲得</h3>
+                <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--text-dark); margin-bottom: 40px; letter-spacing: 2px; text-align: center; border-bottom: 2px solid var(--color-milk-tea); padding-bottom: 15px; display: inline-block; width: 100%;">完成「舒.試.穿」即可獲得</h3>
                 
-                <ul class="reward-list" style="list-style: none; text-align: left; max-width: 300px; margin: 0 auto; padding: 0;">
+                <ul class="reward-list" style="list-style: none; text-align: left; max-width: 320px; margin: 0 auto; padding: 0;">
                     
-                    <li style="font-size: 1.05rem; margin-bottom: 22px; display: flex; align-items: center; color: var(--text-dark); letter-spacing: 0.5px;">
-                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background-color: rgba(184, 142, 117, 0.1); border-radius: 50%; margin-right: 16px; color: var(--color-milk-tea); flex-shrink: 0;">
-                            <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                                <path d="M19 7H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-2 12H7v-8h10v8zm-5-14c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"/>
+                    <li style="font-size: 1.15rem; font-weight: 500; margin-bottom: 30px; display: flex; align-items: center; color: var(--text-dark); letter-spacing: 0.8px;">
+                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: var(--color-milk-tea); border-radius: 12px; margin-right: 20px; color: white; flex-shrink: 0; box-shadow: 0 4px 10px rgba(184, 142, 117, 0.3);">
+                            <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;">
+                                <path d="M20 6H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM4 8h16v8H4V8zm2 2v4h4v-4H6zm6 0v4h6v-4h-6z"/>
                             </svg>
                         </span>
-                        法朵專屬內衣洗衣袋
+                        法朵專屬內衣洗衣袋乙個
                     </li>
                     
-                    <li style="font-size: 1.05rem; margin-bottom: 0; display: flex; align-items: center; color: var(--text-dark); letter-spacing: 0.5px;">
-                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background-color: rgba(184, 142, 117, 0.1); border-radius: 50%; margin-right: 16px; color: var(--color-milk-tea); flex-shrink: 0;">
-                            <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;">
-                                <path d="M18.06 23h1.66c.37 0 .66-.3.66-.67V1.67c0-.37-.3-.67-.66-.67h-1.66c-.37 0-.66.3-.66.67v20.66c0 .37.3.67.66.67zM4.28 23h1.66c.37 0 .66-.3.66-.67V1.67c0-.37-.3-.67-.66-.67H4.28c-.37 0-.66.3-.66.67v20.66c0 .37.3.67.66.67zm7.57-21.22c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                    <li style="font-size: 1.15rem; font-weight: 500; margin-bottom: 0; display: flex; align-items: center; color: var(--text-dark); letter-spacing: 0.8px;">
+                        <span style="display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background-color: var(--color-milk-tea); border-radius: 12px; margin-right: 20px; color: white; flex-shrink: 0; box-shadow: 0 4px 10px rgba(184, 142, 117, 0.3);">
+                            <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;">
+                                <path d="M22 10V6c0-1.1-.9-2-2-2H4c-1.1 0-1.99.9-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-1.99 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/>
                             </svg>
                         </span>
-                        專屬優惠券
+                        試穿專屬優惠券乙張
                     </li>
                     
                 </ul>
